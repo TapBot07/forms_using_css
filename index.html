@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <style>
+      body{
+        color: black;
+        background: linear-gradient(135deg, #ff6b6b, #5f27cd);
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    fieldset{
+        width: 700px;
+        border:5px solid black;
+        border-radius: 25px;
+    }
+    input:required{
+        border: 3px solid red;
+    }
+    input:optional{
+        border: dashed green;
+    }
+    input[readonly]
+    {
+        background-color: rgb(0, 0, 0);
+        color: rgb(195, 255, 0);
+        font-weight: 800;
+    }
+    select{
+        background-color: rgb(25, 138, 169);
+        border-radius: 15px;
+        font-size: 30px;
+        width: 260px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+    }
+    input[type="radio"]:checked
+    {
+        height: 20px;
+        width: 20px;
+        color: blue;
+    }
+    input[type="radio"]:checked + label
+    {
+        height: 20px;
+        width: 20px;
+        font-size: 15px;
+        color: rgb(241, 240, 246);
+    }
+    p{
+        display: none;
+    }
+    input:hover+p{
+        display: inline;
+        background-color:rgb(0, 0, 0);
+        color: rgb(255, 225, 0);
+        font-weight: 200px;   
+    }
+    input:focus{
+        background-color: rgb(231, 224, 15);
+        color:black ;
+        font-weight: 500;
+    }
+    img{
+        display: none;
+    }
+
+
+    input[type="Email"]:focus:valid~img.Valid
+    {
+        display:inline;
+        height: 15px;
+        width: 10px;
+        border-radius: 100px;
+    }
+    input[type="Email"]:focus:invalid~img.Invalid
+    {
+        display:inline;
+        height: 15px;
+        width: 10px;
+        border-radius: 100px;
+    }
+    .btn{
+            cursor: pointer;
+            background-color: blue;
+            color: yellow;
+            padding: 10px;
+            border-radius: 15px;
+            border: none;
+            margin: 10px 0px;
+        }
+   
+  </style>
+</head>
+<body>
+    <h1>Course Registration Form</h1>
+<form action="">
+
+<fieldset>
+    <legend>Personal Details</legend>
+    <table>
+        <tr> 
+        <td><label for="">Name</label></td>
+        <td><input type="text" placeholder="Ex-Lohith" maxlength="10" required> <p>Enter your Name</p><br></td>
+        </tr>
+        <tr>
+            <td><label for="">Surname</label></td>
+            <td><input type="text" optional > <br></td>
+        </tr>
+        <tr>
+            <td><label for="">Mobile number</label></td>
+            <td><input type="tel" placeholder="Ex-9876540421" maxlength="10"> <p>Enter your Phone Number</p> <br></td>
+        </tr>
+        <tr>
+            <td> <label for="">Email</label></td>
+            <td><input type="email" placeholder="Ex-Lohith123@gmail.com"required>
+                <img src="ok.png" class="Valid"> 
+                <img src="not ok.png" class="Invalid"><br></td>
+        </tr>
+        <tr>
+            <td> <label for="">Password</label></td>
+            <td>  <input type="password" required> <p>Atleast provide 1 Uppercase ,1 Lowercase,1 spl charcter</p>  <br></td>
+        </tr>
+        <tr>
+            <td>  <label for="">Confirm Password</label></td>
+            <td> <input type="password" required><br></td>
+        </tr>
+        <tr>
+            <td> <label for="">DOB</label></td>
+            <td>  <input type="date" required> <br></td>
+        </tr>
+        <tr>
+            <td> <label for="">Gender</label></td>
+            <td>
+                <input type="radio"  name="Gender" value="M" required><label for="">MALE</label>
+                <input type="radio"  name="Gender" value="F" required><label for="">Female</label>
+                <input type="radio"  name="Gender" value="B" required><label for="">OTHER </label><br></td>
+        </tr>
+        <tr>
+            <td><label>Age</label></td>
+            <td><input type="number" name="age" required min="18" max="100"></td>
+        </tr>
+        <tr>
+            <td><label for="">Select Country</label></td>
+            <td> <select >
+                <option value="">INDIA</option>
+                <option value="">USA</option>
+                <option value="">UK</option>
+            </select> <br></td>
+        </tr>
+        <tr>
+            <td><label for="">Upload Picture</label></td>
+            <td> <input type="file"> <br></td>
+        </tr>
+        <tr>
+          <td><input type="reset"></td>
+        </tr>
+        </table>
+</fieldset>
+   <fieldset>
+    <legend>Course details</legend>
+    <table>
+        <td><label for="">Select Course</label><br></td>
+       </tr>
+       <tr>
+        <td><select>
+            <option value="">JAVA</option>
+            <option value="">Python Full Stack</option>
+        </select></td>
+       </tr>
+       <tr>
+        <td>Delivery Mode</td>
+        <td>
+            <input type="radio" name="medium"required><label for="">OFFLINE</label>
+            <input type="radio" name="medium"required ><label for="">ONLINE</label>
+        </td>
+        <tr>
+            <td>
+                <label for="">Institute Name</label>
+            </td>
+            <td><input type="text" value="TAP ACADEMY" readonly ></td>
+        </tr>
+        <tr>
+            <td><label for="">Comments</label></td><br>
+           <td><textarea name="" id="" cols="30" rows="10"></textarea></td> 
+        </tr>
+        <tr>
+            <td>
+                <div class="btn">
+                    <button><a href="indexcard.html" target="_blank">Submit</a></button>
+                </div>
+            </td>
+        </tr>
+       </tr>
+    </table>
+   </fieldset>
+</form>
+
+</body>
+</html>
